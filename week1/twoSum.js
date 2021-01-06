@@ -6,14 +6,16 @@ var twoSum = function(nums, target) {
         
         if(map.has(value)){
             var array = [i];
-            array.push(map.get(value))
+            console.log(map.get(value))
+            // array.push(map.get(value))
             return array;
         }
         else{
             map.set(currNum,i)
+            
         }
         
-}
+}   
     
 };
 console.log(twoSum([1,2,3,4,5],9));

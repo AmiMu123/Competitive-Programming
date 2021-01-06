@@ -18,5 +18,5 @@ function repeatedString(s, n) {
     }
     return full_rep;
 
-    
    }
+

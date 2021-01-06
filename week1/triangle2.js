@@ -13,7 +13,7 @@ function PrintDiamond(rows) {
         }
         for (var j = 1; j <= rows; j++) {
             if (j <= (n - 1 + k) && j >= (n + 1 - k))
-                s += "*";
+                s += "*";   
             else
                 s += " ";
         }
