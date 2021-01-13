@@ -1,36 +1,42 @@
+
 function climbingLeaderboard(scores, alice) {
-    
-    let score_map = new Map();
-    let score = [];
+    let hash_map = new Map();
+    let rank = 1;
+    // time complexity O(n) time(where n is scores length)
     for(let i = 0;i<scores.length;i++){
-        let elem = scores[i];
-        let count = score_map.get(elem) || 0;
-        score_map.set(elem,count+1);
-        
+             if(!hash_map.has(scores[i])){
+                 hash_map.set(scores[i],rank++)
+             }
     }
-    for(let ranks of score_map.keys()){
-        score.push(ranks);
+    var  find = function(hash_map,scores,alice_score){
+        let left = 0;
+        let right = scores.length -1;
+        // O(log n) time binary search to find the position for alice score
+        while(left<=right){
+            let mid = Math.floor((left+right)/2);
+            if(alice_score ===scores[mid]){
+                return hash_map.get(alice_score);
+            }
+            else if(alice_score < scores[mid]){
+                left = mid + 1;
+                
+            }
+            else{
+                right = mid -1;
+            }
+        }
+        if(right<0){
+            return 1;
+        }
+        return hash_map.get(scores[right]) +1   
     }
 
     
-    let result_array = [] 
-    
-    for(let i = 0;i<score.length;i++){  
-        
-        for(let j = 0;j<alice.length;j++){ 
-            
-            score.push(alice[j])
-            let toCheckScore = score.sort(function(a,b){return b-a});
-            let result_score = toCheckScore.indexOf(alice[j]) +1;
-            result_array.push(result_score);
-            score.splice(toCheckScore.indexOf(alice[j]),1)
-        }
-       
-        
-        }
-        
-    var ans = result_array.splice(0,alice.length);
-    return ans
-    
+    let result_array = [];
+    // O(n) time
+    for(let i = 0;i<alice.length;i++){
+        result_array.push(find(hash_map,scores,alice[i]));
+    }
+    return result_array;
 }
-   
+console.log(climbingLeaderboard([100, 100 ,50 ,40 ,40 ,20 ,10],[5 ,25, 50, 120]))
