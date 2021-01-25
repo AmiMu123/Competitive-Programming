@@ -32,6 +32,10 @@ var removeElements = function(head, val) {
       
    }
 
+
+
+
+   
    // with only one pointer
 
    /**
