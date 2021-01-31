@@ -11,9 +11,7 @@ var removeDuplicates = function(S) {
     while(array.length !==0){
         if(array[array.length-1] !== stack[stack.length-1]){
             stack.push(array[array.length - 1]);
-            array.pop();
-            
-            
+            array.pop(); 
         }
        else if(array[array.length-1] === stack[stack.length-1]){
            
