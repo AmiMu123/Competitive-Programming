@@ -9,7 +9,6 @@ class Solution:
                 if isConnected[i][j] == 1 and j not in visited:
                     visited.add(j)
                     dfs(j)
-
         for i in range(len_m):
             if i not in visited:
                 dfs(i)
