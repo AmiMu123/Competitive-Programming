@@ -1,13 +1,13 @@
 class Solution:
-    def floodFill(self, image, sr, sc, newColor)]:
-        row, col= len(image), len(image[0])
-        color= image[sr][sc]
+    def floodFill(self, image, sr, sc, newColor):
+        row, col = len(image), len(image[0])
+        color = image[sr][sc]
         if color == newColor:
             return image
 
         def dfs(r, c):
             if image[r][c] == color:
-                image[r][c]= newColor
+                image[r][c] = newColor
                 if r >= 1:
                     dfs(r-1, c)
                 if r + 1 < row:
