@@ -12,7 +12,6 @@ class Solution:
             for j in range(col):
                 if grid[i][j] == 1:
                     queue.append((i, j, 0))
-
         while queue:
             row, col, dist = queue.popleft()
             for neighbour in neighbours:
