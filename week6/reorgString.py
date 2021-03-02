@@ -1,8 +1,9 @@
 import heapq
+from collections import Counter
 
 
 class Solution:
-    def reorganizeString(self, S) -> str:
+    def reorganizeString(self, S):
         freq = Counter(S)
         heap = [(-v, k) for (k, v) in freq.items()]
         heapq.heapify(heap)
