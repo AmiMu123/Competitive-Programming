@@ -26,7 +26,7 @@ var frequencySort = function (nums) {
     for (let elem of map) {
         // console.log(elem, 'just elem')
         // console.log(elem[0], 'elem keys')
-        console.log(elem[1], 'freq')
+        
         count[elem[1]].push(elem[0])
     }
     console.log(count)
