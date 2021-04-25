@@ -3,7 +3,6 @@ import heapq
 
 class Solution:
     def furthestBuilding(self, heights, bricks, ladders):
-
         # heap = []
         # count = 0
         # while count < len(heights) - 1:

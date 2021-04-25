@@ -11,7 +11,6 @@ class Solution:
                 right = mid - 1
             else:
                 left = mid + 1
-
         return ans
 
     def get_day_count(self, weights, cur_weight, D):
