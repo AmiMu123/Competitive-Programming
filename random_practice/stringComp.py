@@ -1,6 +1,5 @@
 class Solution(object):
     def compress(self, word):
-
         count = 0
         comp = ""
         for i in range(len(word)):
